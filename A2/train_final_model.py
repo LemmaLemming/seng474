@@ -1,19 +1,20 @@
 import numpy as np
 from sklearn.svm import SVC
 import joblib  # To save the model
+import os
 
 # Load preprocessed data
-data = np.load("processed_data.npz")
+data = np.load("utils/processed_data.npz")
 X_train, y_train = data["X_train"], data["y_train"]
 
-# Best C from cross-validation
-best_C = 0.1  # Replace with the actual best C from your results
+# Load best C from file
+best_C = np.load("utils/best_C.npy")
+print(f"Loaded best C: {best_C}")
 
-# Train final SVM model
+# Train final SVM model using best C
 final_model = SVC(kernel="linear", C=best_C)
 final_model.fit(X_train, y_train)
 
 # Save the trained model
-joblib.dump(final_model, "best_svm_model.pkl")
-
-print(f"Final model trained with C={best_C} and saved as 'best_svm_model.pkl'")
+joblib.dump(final_model, "utils/best_svm_model.pkl")
+print(f"Final model trained with C={best_C} and saved as 'utils/best_svm_model.pkl'")
