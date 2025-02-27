@@ -1,10 +1,8 @@
-import sys
 import numpy as np
 
 # Add 'utils' folder to the system path so we can import mnist_reader
-sys.path.append("utils")
 
-import mnist_reader
+from utils import mnist_reader
 
 # Load dataset
 X_train, y_train = mnist_reader.load_mnist('data/fashion', kind='train')
@@ -37,6 +35,11 @@ print(f"Flattened test shape: {X_test.shape}")
 X_train = X_train / 255.0
 X_test = X_test / 255.0
 
+# Save preprocessed data to a file
+np.savez("processed_data.npz", X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test)
+print("Processed data saved to 'processed_data.npz'")
+
 # print(f"Final training data shape: {X_train.shape}, Labels: {y_train.shape}")
 # print(f"Final test data shape: {X_test.shape}, Labels: {y_test.shape}")
 # print(f"Sample label counts: {np.bincount(y_train)}, {np.bincount(y_test)}")
+
