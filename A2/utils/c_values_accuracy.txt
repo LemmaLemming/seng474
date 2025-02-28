@@ -1,0 +1,12 @@
+C Values and Mean Accuracy Scores
+----------------------------------------
+C=0.000100, Mean Accuracy=0.8801
+C=0.001000, Mean Accuracy=0.9342
+C=0.010000, Mean Accuracy=0.9561
+C=0.100000, Mean Accuracy=0.9611
+C=1.000000, Mean Accuracy=0.9578
+C=10.000000, Mean Accuracy=0.9531
+C=100.000000, Mean Accuracy=0.9490
+C=1000.000000, Mean Accuracy=0.9458
+C=10000.000000, Mean Accuracy=0.9400
+C=100000.000000, Mean Accuracy=0.9400

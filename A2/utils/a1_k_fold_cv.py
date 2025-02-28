@@ -2,7 +2,7 @@ import numpy as np
 
 def k_fold_cross_validation(model, X, y, k=5, scoring='accuracy'):
     """
-    Perform k-fold cross-validation manually (without sklearn).
+    Perform k-fold cross-validation manually without sklearn.
     
     Parameters:
     - model: A machine learning model (must have fit and predict methods).
@@ -17,7 +17,7 @@ def k_fold_cross_validation(model, X, y, k=5, scoring='accuracy'):
     """
     n_samples = len(X)
     indices = np.arange(n_samples)
-    np.random.seed(42)  # Ensure reproducibility
+    np.random.seed(42) 
     np.random.shuffle(indices)  # Shuffle indices before splitting
 
     fold_sizes = np.full(k, n_samples // k, dtype=int)  # Equal-sized folds
